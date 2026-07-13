@@ -42,18 +42,18 @@ module.exports.logIn = async (req, res, next) => {
     // Use passport-local-mongoose helper to verify password
     const authResult = await user.authenticate(password);
 
-    if (!authResult.user) {
+    if (!authResult[0]) {
       req.flash("error", "Invalid username or password");
       return res.redirect("/login");
     }
 
-    req.logIn(authResult.user, (err) => {
+    req.logIn(authResult[0], (err) => {
       if (err) {
         return next(err);
       }
       req.flash(
         "success",
-        `Welcome back, ${authResult.user.username}!  on Wanderlust`
+        `Welcome back, ${authResult[0].username}!  on Wanderlust`
       );
       let redirectUrl = res.locals.redirectUrl;
       if(redirectUrl) {

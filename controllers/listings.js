@@ -34,7 +34,7 @@ module.exports.editListing = async (req, res) => {
 
     if (!list) {
       req.flash("error", "Listing you requested for edit does not exist!");
-      res.redirect("/listings");
+      return res.redirect("/listings");
     }
 
     let originalImageUrl = list.image.url;
@@ -76,14 +76,13 @@ module.exports.deleteListing = async (req, res) => {
 module.exports.showListing = async (req, res) => {
     let { id } = req.params;
     const list = await Listing.findById(id)
-      .populate({ path: "reviews", populate: { path: "author", } })      // here we chaining populate,   listings->reviews->author
+      .populate({ path: "reviews", populate: { path: "author", } })
       .populate("owner");
 
     if (!list) {
       req.flash("error", "Listing you requested for does not exist!");
-      res.redirect("/listings");
+      return res.redirect("/listings");
     }
-    // console.log(list)
     res.render("listings/show.ejs", { list });
   }
   
