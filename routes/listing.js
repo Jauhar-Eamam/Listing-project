@@ -47,6 +47,11 @@ router.get(
   wrapAsync(listingController.editListing)
 );
 
+router.get(
+  "/listings/:filter",
+  wrapAsync(listingController.showListing)
+)
+
 module.exports = router;
 
 //all Data show route
