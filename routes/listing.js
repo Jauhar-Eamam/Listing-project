@@ -48,8 +48,8 @@ router.get(
 );
 
 router.get(
-  "/listings/:filter",
-  wrapAsync(listingController.showListing)
+  "/filter/:filter",
+  wrapAsync(listingController.filterListing)
 )
 
 module.exports = router;

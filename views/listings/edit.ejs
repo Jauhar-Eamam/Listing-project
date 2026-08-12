@@ -65,17 +65,43 @@
         </div>
       </div>
 
-      <div class="mb-3">
-        <label for="location" class="form-label">Location</label>
-        <input
-          type="text"
-          name="listing[location]"
-          value="<%= list.location %>"
-          class="form-control"
-          required
-        />
-        <div class="invalid-feedback">Location is required</div>
-      </div>
+      <div class="row">
+          <div class="mb-2 col-md-4">
+            <label for="types" class="form-label">Category</label>
+            <select name="listing[types]" class="form-control">
+              <option  ><%= list.types %></option>
+              <option name="amazing_Pools" value="amazing_Pools">
+                Amazing_Pools
+              </option>
+              <option name="arctic" value="arctic">Arctic</option>
+              <option name="beach" value="beach">Beach</option>
+              <option name="camping" value="camping">Camping</option>
+              <option name="castels" value="castels">Castels</option>
+              <option name="farms" value="farms">Farms</option>
+              <option name="iconic_cities" value="iconic_cities">
+                Iconic_cities
+              </option>
+              <option name="mountain" value="mountain">Mountain</option>
+              <option name="rooms" value="rooms">Rooms</option>
+              <option name="tranding" value="tranding">Tranding</option>
+            </select>
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">Location should be valid</div>
+          </div>
+          <div class="mb-2 col-md-8">
+            <label for="location" class="form-label">Location</label>
+            <input
+              type="text"
+              name="listing[location]"
+              value="<%= list.location %>"
+              placeholder="Bihar, Rajgeer"
+              class="form-control"
+              required
+            />
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">Location should be valid</div>
+          </div>
+        </div>
       <button type="submit" class="btn btn-dark add-btn mt-3">Edit</button>
     </form>
   </div>

@@ -45,7 +45,7 @@
             placeholder="Image URL/Link.."
             class="form-control"
           />
-        </div>                                                here we can take link of the image and then save to the mongoDB -->                                
+        </div>                                                here we can take link of the image and then save to the mongoDB -->
 
         <div class="mb-2">
           <label for="image" class="form-lebel">Upload Image </label>
@@ -84,20 +84,46 @@
             <div class="invalid-feedback">Country should be valid</div>
           </div>
         </div>
-        <div class="mb-2">
-          <label for="location" class="form-label">Location</label>
-          <input
-            type="text"
-            name="listing[location]"
-            placeholder="Bihar, Rajgeer"
-            class="form-control"
-            required
-          />
-          <div class="valid-feedback"></div>
-          <div class="invalid-feedback">Location should be valid</div>
+        <div class="row">
+          <div class="mb-2 col-md-4">
+            <label for="types" class="form-label">Category</label>
+            <select name="listing[types]" class="form-control">
+              <option >Select-Category</option>
+              <option name="amazing_Pools" value="amazing_Pools">
+                Amazing_Pools
+              </option>
+              <option name="arctic" value="arctic">Arctic</option>
+              <option name="beach" value="beach">Beach</option>
+              <option name="camping" value="camping">Camping</option>
+              <option name="castels" value="castels">Castels</option>
+              <option name="farms" value="farms">Farms</option>
+              <option name="iconic_cities" value="iconic_cities">
+                Iconic_cities
+              </option>
+              <option name="mountain" value="mountain">Mountain</option>
+              <option name="rooms" value="rooms">Rooms</option>
+              <option name="tranding" value="tranding">Tranding</option>
+            </select>
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">Location should be valid</div>
+          </div>
+          <div class="mb-2 col-md-8">
+            <label for="location" class="form-label">Location</label>
+            <input
+              type="text"
+              name="listing[location]"
+              placeholder="Bihar, Rajgeer"
+              class="form-control"
+              required
+            />
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">Location should be valid</div>
+          </div>
         </div>
 
-        <button type="submit" class="btn btn-dark add-btn mt-3 mb-3">Add</button>
+        <button type="submit" class="btn btn-dark add-btn mt-3 mb-3">
+          Add
+        </button>
       </form>
     </body>
   </div>
